@@ -16,4 +16,5 @@ do
 "git commit -m <commit name>"
 git push -u origin main
 
-
+if you can't commit to your own branch
+git pull origin main (probably because the other guy did something to the main branch)
