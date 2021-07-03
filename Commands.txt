@@ -18,3 +18,8 @@ git push -u origin main
 
 if you can't commit to your own branch
 git pull origin main (probably because the other guy did something to the main branch)
+
+To remote your branches
+git push -u origin <branch name>
+
+
