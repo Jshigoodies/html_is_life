@@ -6,3 +6,12 @@ git checkout main
 git merge <branch name> (is how to merge barnches)
 -----
 
+git cehckout -b <branch name> (to make another branch)
+
+
+if there is some complications. Then when in doubt
+do 
+"git pull"
+"git add"
+"git commit -m <commit name>"
+git push -u origin main
