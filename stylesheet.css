@@ -1,0 +1,12 @@
+body {
+    font-family: 'Courier';
+    margin: 0;
+}
+
+#board {
+    /* 80% of the browser's width */
+    width: 80vw; 
+    /* 70% of the browser's height */
+    height: 70vh;
+    background-color: gray
+}
