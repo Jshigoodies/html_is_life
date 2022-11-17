@@ -25,3 +25,22 @@
 body {
     background-color: gray;
 }
+
+header {
+    background-color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: antiquewhite;
+}
+
+footer {
+    background-color: #333;
+    color: antiquewhite;
+}
+
+.contact {
+    width: 200px;
+    height: 200px;
+}
