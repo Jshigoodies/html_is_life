@@ -1,36 +1,108 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="./sytle.css">
-        <title>Jshi</title>
-        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Minecraft UHCL Server Status</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                background-color: #f4f4f4;
+            }
+            .navbar {
+                background-color: #333;
+                overflow: hidden;
+                display: flex;
+                justify-content: center;
+                padding: 10px 0;
+            }
+            .navbar a {
+                color: white;
+                padding: 14px 20px;
+                text-decoration: none;
+                font-size: 18px;
+            }
+            .navbar a:hover {
+                background-color: #575757;
+            }
+            .container {
+                margin-top: 50px;
+                padding: 20px;
+                background: white;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h1 {
+                color: #333;
+            }
+            #status {
+                font-size: 20px;
+                font-weight: bold;
+                margin-top: 20px;
+            }
+            .footer {
+                margin-top: 50px;
+                padding: 10px;
+                background-color: #333;
+                color: white;
+                font-size: 14px;
+            }
+        </style>
+        <script>
+            async function fetchServerStatus() {
+                const address = "uhclhawkgaming.chickenkiller.com"
+                const response = await fetch(`https://api.mcsrvstat.us/3/${address}`);
+                const data = await response.json();
+
+                if(data.online) {
+                    console.log("yes");
+                    let playerList = "<p><strong>Players:</strong> " + data.players.online + "/" + data.players.max + "</p>";
+                    if (data.players.list) {
+                        playerList += "<p><strong>Online Players:</strong> " + data.players.list.map(p => p.name).join(", ") + "</p>";
+                    }
+                
+
+                document.getElementById("status").innerHTML = `
+                    <h2>Server is Online</h2>
+                    <p><strong>IP:</strong> ${data.ip}</p>
+                    <p><strong>Port:</strong> ${data.port}</p>
+                    <p><strong>Version:</strong> ${data.version}</p>
+                    <p><strong>Online:</strong> ${data.online}</p>
+                    <p><strong>Hostname:</strong> ${data.hostname}</p>
+                    <p><strong>Software:</strong> ${data.software}</p>
+                    <p><strong>MOTD:</strong> ${data.motd.html.join("<br>")}</p>
+                    ${playerList}
+                `;
+                }
+                else {
+                    document.getElementById("status").innerHTML = "<h2>Server is Offline</h2>";
+                }
+            }
+
+            window.onload = fetchServerStatus;
+        </script>
     </head>
 
     <body>
-        <header>
-            <h1 class="title">Jshi</h1>
-        </header>
-        <!-- Navigation -->
-        <section>
-            <div class="topnav">
-                <a href="list.html">Anime and Manga List</a>
-                <a href="https://github.com/Jshigoodies/html_is_life">Github</a>
-                <a href="https://jshigoodies.itch.io/">Itch.io</a>
-                <a href="game.html">Game</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="https://www.youtube.com/channel/UCXvSIyzcIUhaAJyMNiw38QQ">Youtube Channel</a>
-                <a href="videos.html">Videos</a>
-                <a href="myheros.html">My Heroes</a>
-            </div>
-        </section>
-        <!-- fix this later -->
-        <br><br><br><br><br> 
-        <!-- fix this later -->
-        <footer>
-            <p class="contact"><strong>Contact: jshigoodies@gmail.com</strong></p>
-        </footer>
-        
+        <div class="navbar">
+            <a href="http://uhclhawkgaming.chickenkiller.com:8100">The Map of the world</a>
+            <a href="https://github.com/Jshigoodies/html_is_life">Github</a>
+            <a href="http://uhclhawkgaming.chickenkiller.com:8096">Jellyfin</a>
+            <a href="http://uhclhawkgaming.chickenkiller.com:4533">Navidrome</a>
+            <a href="http://uhclhawkgaming.chickenkiller.com:8065">Mattermost</a>
+            <a href="http://uhclhawkgaming.chickenkiller.com/">My old site</a>
+        </div>
+        <h1>UHCL Minecraft Server Status</h1>
+        <div id="status">Loading....</div>
 
+        <div class="footer">
+            Hosted using <a href="https://freedns.afraid.org" target="_blank" style="color: lightgray;">FreeDNS</a>
+        </div>
     </body>
-
 </html>
