@@ -5,13 +5,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style_list.css">
         <title>My List of Shows, Manga, and Anime</title>
-        
+        <script>
+            function filterlist() {
+                let input = document.getElementById('search').value.toLowerCase();
+                let items = document.querySelectorAll('#list li');
+
+                items.forEach(item => {
+                    let strongText = item.querySelector('strong').textContent.toLowerCase();
+                    let descText = item.querySelector('.description').textContent.toLowerCase();
+                    let reviewText = item.querySelector('.review').textContent.toLowerCase();
+
+                    if (strongText.includes(input) || descText.includes(input) || reviewText.includes(input)) {
+                        item.style.display = '';
+                    }    
+                    else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            
+        </script>
     </head>
 
     <body>
         <div class="container">
             <h1>My List of Shows, Manga, and Anime</h1>
-            <ul>
+            <input type="text" id="search" placeholder="Be my guest..." onkeyup="filterlist()">
+            <ul id="list">
                 <li>
                     <strong>A STORY ABOUT TREATING A FEMALE KNIGHT WHO HAS NEVER BEEN TREATED AS A WOMAN AS A WOMAN </strong>
                     <p class="description">A story about treating a female knight who has never been treated as a woman as a woman</p>
@@ -340,11 +361,136 @@
                 </li>
                 <li>
                     <strong>Diary Survival</strong>
+                    <p class="description">Zombie Apocalypse</p>
+                    <p class="review">It's ok.... I like the art. webtoon</p>
+                </li>
+                <li>
+                    <strong>Black Clover</strong>
+                    <p class="description">No magic no problem</p>
+                    <p class="review">baby beserk in a mage classroom</p>
+                </li>
+                <li>
+                    <strong>Maybe Meant To Be (webtoon)</strong>
+                    <p class="description">Girl is a loser. Nerd boi turns out to be a jacked giga chad. Marry. Ship it</p>
+                    <p class="review">pretty good.</p>
+                </li>
+                <li>
+                    <strong>Zombieland Saga</strong>
+                    <p class="description">Zombie j pop idols</p>
+                    <p class="review">I, what?</p>
+                </li>
+                <li>
+                    <strong>Arknights</strong>
+                    <p class="description">Based off of a game</p>
+                    <p class="review">5/10. because no Lappland</p>
+                </li>
+                <li>
+                    <strong>Bocchi the Rock!</strong>
+                    <p class="description">Bocchi the good</p>
+                    <p class="review">Bocchi the 10/10</p>
+                </li>
+                <li>
+                    <strong>Fuufu Ijou, Koibito Miman</strong>
+                    <p class="description">School teaches you about being a husbando and waifu</p>
+                    <p class="review">Where do i apply for this school?</p>
+                </li>
+                <li>
+                    <strong>Get Schooled</strong>
+                    <p class="description">"Teachers" teaching students the real world</p>
+                    <p class="review">This is what our society really needs. People who need to face the consequences of their actions.</p>
+                </li>
+                <li>
+                    <strong>Please Go Home, Akutsu-san!</strong>
+                    <p class="description">big titty women on my bed</p>
+                    <p class="review">Please let me fk Akutsu-san!</p>
+                </li>
+                <li>
+                    <strong>Rent a Girlfriend</strong>
+                    <p class="description">brother really is so fking lonely that he needs to buy a girlfriend</p>
+                    <p class="review">I couldn't get pass the first chapter. Like I feel like i could have written it better.</p>
+                </li>
+                <li>
+                    <strong>God of Highschool</strong>
+                    <p class="description">Fight Fight FIGHT</p>
+                    <p class="review">This has nothing to do with highschool. Not even close. If you try to guess what it is about you are wrong. There is no plot.</p>
+                </li>
+                <li>
+                    <strong>Dress up Darling</strong>
+                    <p class="description">Best Girl cosplays as Best Girl</p>
+                    <p class="review">I can't believe they completed it. Like.... COME ON FK ALREADY</p>
+                </li>
+                <li>
+                    <strong>One Punch Man</strong>
+                    <p class="description">You lie. You had strength to spare. I never stood a chance. It wasn't even a battle. So much for prophecies. You were too strong... Saitama...</p>
+                    <p class="review">It's lonely isn't it.</p>
+                </li>
+                <li>
+                    <strong>Kaiju No. 8</strong>
+                    <p class="description">Man vs Monster</p>
+                    <p class="review">how about Man + Monster vs Monster</p>
+                </li>
+                <li>
+                    <strong>Call of the Night</strong>
+                    <p class="description">The night is calling you... and they want your blood</p>
+                    <p class="review">The night is beautiful</p>
+                </li>
+                <li>
+                    <strong>Eminence in shadow</strong>
+                    <p class="description">I AM ATOMIC</p>
+                    <p class="review">I AM ATOMIC</p>
+                </li>
+                <li>
+                    <strong>The Skeleton Soldier Failed to Defend the Dungeon</strong>
+                    <p class="description">Webtoon novel. skeleton boi is the main character</p>
+                    <p class="review">when you got nothing to do. it's a pretty good waste of my time.</p>
+                </li>
+                <li>
+                    <strong>Skeleton Knight in Another World</strong>
+                    <p class="description">You get isekaied into your game character and he's a skeleton</p>
+                    <p class="review">They made an anime???????</p>
+                </li>
+                <li>
+                    <strong>Useless Ponko</strong>
+                    <p class="description">Useless maid robot</p>
+                    <p class="review">Ponko is so useless. I'm convinced robots will not take over the world.</p>
+                </li>
+                <li>
+                    <strong>Onegai Muscle</strong>
+                    <p class="description">Muscles. Lifting Weights. Women</p>
+                    <p class="review">tan girl TAN GIRL</p>
+                </li>
+                <li>
+                    <strong>Me Ga Hana</strong>
+                    <p class="description">Office Lady</p>
+                    <p class="review">Man i'm tired. I just got back from China. This manga is pretty good. Short one. Don't know if author still making chapters. So dam slow</p>
+                </li>
+                <li>
+                    <strong>Magical Girl Apocalypse</strong>
+                    <p class="description">I think the title describes it</p>
+                    <p class="review">Do not read it. This isn't for the weak minded</p>
+                </li>
+                <li>
+                    <strong>Tomo-chan Is a Girl!</strong>
+                    <p class="description">She's one of the boys!!!!</p>
+                    <p class="review">tomgirl</p>
+                </li>
+                <li>
+                    <strong>Uzumaki</strong>
+                    <p class="description">Basically, there's this high school girl except she's got huge boobs, I mean some serious honkers. A real set of badonkers. Packin' some dobonhonkeros. Massive dohoonkabhankoloos Big ol' tonhongerekoogers. 'What happens next?!' you ask? Transfer student shows up one day with even bigger bonkhonagahoogs. Humungous hungolomghnonoloughongous.</p>
+                    <p class="review">yes</p>
+                </li>
+                <li>
+                    <strong></strong>
                     <p class="description"></p>
                     <p class="review"></p>
                 </li>
                 <li>
-                    <strong>Black Clover</strong>
+                    <strong></strong>
+                    <p class="description"></p>
+                    <p class="review"></p>
+                </li>
+                <li>
+                    <strong></strong>
                     <p class="description"></p>
                     <p class="review"></p>
                 </li>
@@ -358,29 +504,26 @@
         </div>
         <p>
             
-            Black Clover <br>
-            Maybe Meant To Be <br>
-            Zombieland Saga <br>
-            Arknights <br>
-            Bocchi the Rock! <br>
-            Fuufu Ijou, Koibito Miman <br>
-            Get Schooled <br>
-            Please Go Home, Akutsu-san! <br>
-            Rent a Girlfriend <br>
-            God of Highschool <br>
-            Dress up Darling <br>
-            One Punch Man <br>
-            Kaiju No. 8 <br>
-            Call of the Night <br>
-            Eminence in shadow <br>
-			The Skeleton Soldier Failed to Defend the Dungeon <br>
-			Skeleton Knight in Another World <br>
-			Useless Ponko <br>
-            Onegai Muscle <br>
-			Me Ga Hana <br>
-			Magical Girl Apocalypse <br>
-			Tomo-chan Is a Girl! <br>
-			Uzumaki <br>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+			
+			
+			
+            
+			
+			
+			
+			
 			Secret Love <br>
 			Loving Reaper <br>
 			The Boxer <br>
@@ -433,8 +576,16 @@
             What Do You Call This Trash <br>
             Dandadan <br>
             Beastars <br>
+            Invincible <br>
+            Sakamoto Days <br>
+            My senpai is annoying <br>
+            Made in Abyss <br>
+            My wife Has no Emotion <br>
+            Leviathan (webtoon) <br>
+            Hunter x Hunter <br>
+            Cutting Her Hair After Finding out That the Person She Likes, Likes <br>
+            Rick and Morty the Anime<br>
 
-            
 
 
             

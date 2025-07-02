@@ -25,6 +25,17 @@
                 text-decoration: none;
                 font-size: 18px;
             }
+            @media (max-width: 600px) {
+                .navbar {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .navbar a {
+                    width: 100%;
+                    text-align: center;
+                    padding: 12px;
+                }
+            }
             .navbar a:hover {
                 background-color: #575757;
             }
@@ -70,7 +81,6 @@
 
                 document.getElementById("status").innerHTML = `
                     <h2>Server is Online</h2>
-                    <p><strong>IP:</strong> ${data.ip}</p>
                     <p><strong>Port:</strong> ${data.port}</p>
                     <p><strong>Version:</strong> ${data.version}</p>
                     <p><strong>Online:</strong> ${data.online}</p>
@@ -96,7 +106,8 @@
             <a href="http://uhclhawkgaming.chickenkiller.com:8096">Jellyfin</a>
             <a href="http://uhclhawkgaming.chickenkiller.com:4533">Navidrome</a>
             <a href="http://uhclhawkgaming.chickenkiller.com:8065">Mattermost</a>
-            <a href="http://uhclhawkgaming.chickenkiller.com/">My old site</a>
+            <a href="https://ug.link/JshisNAS">NAS</a>
+            <a href="mysites.html">My Sites</a>
         </div>
         <h1>UHCL Minecraft Server Status</h1>
         <div id="status">Loading....</div>
