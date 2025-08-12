@@ -1,9 +1,10 @@
-Ifrit
-Goblin Slayer
-Doom Slayer
-Leon S. Kennedy
-Saitama
+
+
+
+
+
 Raiden
+Samuel Rodrigues
 Snake
 Dante
 Ironmouse
@@ -25,3 +26,121 @@ Kyle Crane
 Frieren
 Kratos
 Sans The Skeleton
+Kiyotaka Ayanokoji
+Fell Omen (vibe checks/skill checks you) "He loved not in return, for he was never loved. But nevertheless...love it, he did"
+Samurai Jack
+Alastor
+Courier
+Nier Automata
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Heros</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color: black;
+                color: white;
+            }
+            .character {
+                position: relative;
+                height: 100vh; /* change to 100vh if full screen */
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 1rem;
+                overflow: hidden; /* make sure overlays don't spill */
+            }
+
+            .character::before,
+            .character::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 80px; /* height of the fade */
+                z-index: 1;
+            }
+
+            .character::before {
+                top: 0;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+            }
+
+            .character::after {
+                bottom: 0;
+                background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+            }
+
+            .overlay {
+                position: relative; /* so it appears above gradients */
+                z-index: 2;
+                background: rgba(0, 0, 0, 0.6);
+                padding: 1rem;
+                border-radius: 10px;
+                max-width: 80%;
+            }
+            .overlay h2 {
+                margin: 0 0 0.5rem;
+                font-size: 2rem;
+            }
+            .overlay p {
+                font-size: 1.2rem;
+                margin: 0;
+            }
+            h1 {
+                text-align:center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>
+            My Heros
+        </h1>
+        <div class="character" style="background-image: url('heroImage/ff16.jpg');">
+            <div class="overlay">
+                <h2>Ifrit</h2>
+                <p>"You are not Ifrit. I am,"</p>
+            </div>
+        </div>
+        <div class="character" style="background-image: url('heroImage/the\ goblin\ slayer.jpg');">
+            <div class="overlay">
+                <h2>Goblin Slayer</h2>
+                <p>"I am to goblins what they are to us."</p>
+            </div>
+        </div>
+        <div class="character" style="background-image: url('heroImage/DOOM.jpg');">
+            <div class="overlay">
+                <h2>Doom Slayer</h2>
+                <p>"No"</p>
+            </div>
+        </div>
+        <div class="character" style="background-image: url('heroImage/leon.jpeg');">
+            <div class="overlay">
+                <h2>Leon S. Kennedy</h2>
+                <p>"Women"</p>
+            </div>
+        </div>
+        <div class="character" style="background-image: url('heroImage/luis.jpg');">
+            <div class="overlay">
+                <h2>Luis Serra</h2>
+                <p>"People can change, right?"</p>
+            </div>
+        </div>
+        <div class="character" style="background-image: url('heroImage/ok\ opm.png');">
+            <div class="overlay">
+                <h2>Saitama</h2>
+                <p>"Your limit? Who decides what your limit is. Instead of overthinking your setbacks, just focus on moving foward"</p>
+            </div>
+        </div>
+    </body>
+</html>
